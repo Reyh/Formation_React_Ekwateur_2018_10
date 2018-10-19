@@ -13,7 +13,7 @@ class TodoList extends PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  todos: state.todos, // passer par un selecteur (selectTodos)
+  todos: selectTodos(state), // passer par un selecteur (selectTodos)
 });
 
 export default connect(mapStateToProps)(TodoList);

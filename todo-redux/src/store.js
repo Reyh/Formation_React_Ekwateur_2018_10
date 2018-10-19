@@ -23,7 +23,7 @@ import { newTodo, todos } from './todos/reducers';
     newTodo: 'Acheter de',
     todos: [
       {text: 'Faire les courses', done: false, id: 1},
-      {text: 'Acheter du pain', done: true, id: 1},
+      {text: 'Acheter du pain', done: true, id: 2},
     ]
   },
   composeWithDevTools()

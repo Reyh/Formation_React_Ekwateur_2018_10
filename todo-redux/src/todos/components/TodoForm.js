@@ -4,12 +4,13 @@ import { selectNewTodo } from '../selectors';
 import { todoChange, todoAdd } from '../actions';
 
 class TodoForm extends PureComponent {
-  handleSubmit = (event) => {
-    // dispatch TODO_ADD
+  handleSubmit = (event, todoText) => {
+    event.preventDefault();
+    this.props.dispatch(todoAdd(todoText));
   }
 
   handleChange = (event) => {
-    // dispatch TODO_CHANGE
+    this.props.dispatch(todoChange(event.target.value));
   }
 
   render() {
@@ -23,7 +24,7 @@ class TodoForm extends PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  todoText: state.newTodo, // passer pas un selecteur (selectNewTodo)
+  todoText: selectNewTodo(state), // passer pas un selecteur (selectNewTodo)
 });
 
 export default connect(mapStateToProps)(TodoForm);

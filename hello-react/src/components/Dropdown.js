@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import uuid from 'uuid';
 import css from './Dropdown.module.scss';
 
 // autre option : CSS in JS
 // https://github.com/MicheleBertoli/css-in-js
 
-class Dropdown extends Component {
+class Dropdown extends PureComponent {
   state = {
     showList: false,
   };
+
+  /*
+  shouldComponentUpdate(nextProps) {
+    return this.state.items !== nextProps.items;
+  }
+  */
 
   static getDerivedStateFromProps(props, state) {
     return {
@@ -28,6 +34,7 @@ class Dropdown extends Component {
       showList: false,
       selected: item,
     });
+    this.props.onSelected(item);
   }
 
   render() {

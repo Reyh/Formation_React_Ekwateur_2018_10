@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { desactivable } from '../hocs/desactivable';
 
 // statefull component
 class Clock extends Component {
@@ -30,4 +31,4 @@ class Clock extends Component {
   }
 }
 
-export default Clock;
+export default desactivable(Clock);

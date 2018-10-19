@@ -1,4 +1,5 @@
 import React from 'react';
+import { desactivable } from '../hocs/desactivable';
 
 // stateless component
 function Hello({name = 'Jean'}) {
@@ -12,4 +13,4 @@ function Hello({name = 'Jean'}) {
 // autre possibilité pour les valeurs par défaut
 // Hello.defaultProps = { name: 'Jean' };
 
-export default Hello;
+export default desactivable(Hello);

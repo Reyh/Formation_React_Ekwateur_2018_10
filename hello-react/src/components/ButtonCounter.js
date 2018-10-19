@@ -14,6 +14,7 @@ class ButtonCounter extends Component {
   };
 
   render() {
+    // this.props
     return (
       <button onClick={this.handleClick}>
         {this.state.count}

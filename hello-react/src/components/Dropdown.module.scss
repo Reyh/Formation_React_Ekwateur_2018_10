@@ -1,0 +1,27 @@
+$bgColor: white;
+$hoverColor: lightgray;
+
+.Dropdown {
+  width: 200px;
+  position: relative;
+  cursor: pointer;
+}
+
+.DropdownSelected {
+  border: 1px solid black;
+  padding: 3px;
+  background: $bgColor;
+}
+
+.DropdownList {
+  transform: translateY(-1px);
+  box-sizing: border-box;
+  position: absolute;
+  width: 200px;
+  border: 1px solid black;
+  background: $bgColor;
+}
+
+.DropdownListItem:hover {
+  background: $hoverColor;
+}

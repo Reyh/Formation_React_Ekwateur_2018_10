@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { counterIncrement } from './actions';
+import { selectCount } from './selectors';
 
 class ButtonCounter extends Component {
   handleClick = () => {
-    this.props.dispatch({type: 'COUNTER_INCREMENT'});
+    this.props.dispatch(counterIncrement(10));
   };
 
   render() {
     // this.props
     return (
       <button onClick={this.handleClick}>
-        {this.props.count}
+        {this.props.counter}
       </button>
     )
   }
@@ -21,6 +23,6 @@ function mapStateToProps(state) {
     count: state.count
   };
 }*/
-const mapStateToProps = (state) => ({count: state.count});
+const mapStateToProps = (state) => ({counter: selectCount(state)});
 
 export default connect(mapStateToProps)(ButtonCounter);

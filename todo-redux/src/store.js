@@ -15,7 +15,7 @@ import { newTodo, todos } from './todos/reducers';
  
  export const store = createStore(
   combineReducers({
-    newTodo, // ne s'occupe que de state.newTodo (type string donc déjà muable)
+    newTodo, // ne s'occupe que de state.newTodo (type string donc déjà immuable)
     todos, // ne s'occupe que de state.todos (type array donc faire un changement immuable)
   }),
   // preloaded state à supprimer à la fin
